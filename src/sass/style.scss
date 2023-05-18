@@ -390,10 +390,9 @@ body {
   }
 
   .es-aplicator {
-    margin-bottom: 56px;
     background-color: $purpleBg;
     &__container {
-      padding: 25px 0;
+      padding: 40px 0 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: left;
@@ -440,6 +439,81 @@ body {
     }
     &__img {
       @include img;
+    }
+  }
+
+  .es-steps {
+    margin-bottom: 56px;
+    background-color: $purpleBg;
+    &__container {
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      align-items: center;
+    }
+    &__title {
+      @include text;
+      padding: 15pxpx 16px;
+      font-size: 32px;
+      font-weight: 300;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+      line-height: 1.1;
+      text-align: center;
+    }
+    &__single {
+      width: 100%;
+    }
+    &__img {
+      @include img;
+      // width: 100%;
+      // height: 100%;
+      // object-fit: cover;
+    }
+    &__face {
+      margin: 0 auto;
+      width: fit-content;
+      position: relative;
+    }
+    &__desc {
+      width: 100%;
+      height: 90px;
+      position: absolute;
+      bottom: 0;
+      background: rgba(199, 188, 230, 0.4);
+      z-index: 0;
+    }
+    &__number {
+      font-size: 100px;
+      font-weight: 700;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+    &__smallTitle {
+      @include text;
+      font-size: 16px;
+      position: absolute;
+      left: 12%;
+      top: 30%;
+      text-transform: uppercase;
+      font-weight: 700;
+      z-index: 2;
+    }
+    &__text {
+      @include text;
+      font-size: 16px;
+      position: absolute;
+      left: 12%;
+      top: 56%;
+      font-weight: 300;
+      z-index: 2;
     }
   }
 
@@ -526,6 +600,36 @@ body {
     }
   }
 
+  @media screen and (min-width: 500px) {
+    .es-steps {
+      &__container{
+        flex-wrap: nowrap;
+      }
+      &__single {
+        max-width: 420px;
+        height: 100%;
+      }
+      &__desc {
+        height: 70px;
+      }
+      &__number {
+        font-size: 60px;
+        top: 50%;
+        left: 5%;
+      }
+      &__smallTitle {
+        font-size: 10px;
+        left: 13%;
+        top: 25%;
+      }
+      &__text {
+        font-size: 10px;
+        left: 13%;
+        top: 60%;
+
+      }
+    }
+  }
   @media screen and (min-width: 768px) {
     .es-kv {
       &__bg {
@@ -643,7 +747,6 @@ body {
       }
     }
     .es-aplicator {
-      margin-bottom: 64px;
       &__container{
         flex-wrap: nowrap;
       }
@@ -652,6 +755,27 @@ body {
       }
       &__single {
         width: 50%;
+      }
+    }
+    .es-steps {
+      &__desc {
+        height: 70px;
+      }
+      &__number {
+        font-size: 60px;
+        top: 50%;
+        left: 5%;
+      }
+      &__smallTitle {
+        font-size: 11px;
+        left: 10%;
+        top: 32%;
+      }
+      &__text {
+        font-size: 11px;
+        left: 10%;
+        top: 58%;
+
       }
     }
     .es-cross {
@@ -719,6 +843,27 @@ body {
     .es-aplicator {
       &__line {
         display: block;
+      }
+    }
+    .es-steps {
+      &__desc {
+        height: 80px;
+      }
+      &__number {
+        font-size: 60px;
+        top: 50%;
+        left: 5%;
+      }
+      &__smallTitle {
+        font-size: 12px;
+        left: 10%;
+        top: 32%;
+      }
+      &__text {
+        font-size: 12px;
+        left: 10%;
+        top: 58%;
+
       }
     }
   }
