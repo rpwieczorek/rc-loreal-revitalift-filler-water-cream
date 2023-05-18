@@ -4,6 +4,7 @@ $regular: 'Montserrat', sans-serif;
 $red: #e03e2f;
 $black: #1d1d1b;
 $purple: #624589;
+$purpleBg: #e1dbf2;
 
 html,
 body {
@@ -344,27 +345,101 @@ body {
     }
   }
 
-  .es-benefits {
-    margin-bottom: 56px;
+  .es-results {
+    margin-bottom: 0;
     &__container {
+      padding: 0 16px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
     }
     &__single {
-      width: 332px;
-      &:hover {
-        .es-benefits__img--bg {
-          transform: scale(1.1);
-        }
-      }
+      min-width: 332px;
     }
-    &__image {
-      overflow: hidden;
+    &__title {
+      @include text;
+      font-size: 32px;
+      font-weight: 300;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+      line-height: 1.1;
+      text-align: left;
+      margin-bottom: 8px;
+    }
+    &__subtitle {
+      @include text;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 20px;
+      text-align: left;
+      margin-bottom: 32px;
+      color: $purple;
+    }
+    &__text {
+      @include text;
+      font-weight: 300;
+      font-size: 16px;
+      text-align: left;
+      margin-bottom: 15px;
+      line-height: 1.3;
     }
     &__img {
       @include img;
-      transition: all 0.6s;
+    }
+  }
+
+  .es-aplicator {
+    margin-bottom: 56px;
+    background-color: $purpleBg;
+    &__container {
+      padding: 25px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      align-items: center;
+    }
+    &__single {
+      min-width: 332px;
+    }
+    &__title {
+      @include text;
+      padding: 0 16px;
+      font-size: 32px;
+      font-weight: 300;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+      line-height: 1.1;
+      text-align: left;
+      margin-bottom: 62px;
+      position: relative;
+    }
+    &__line {
+      position: absolute;
+      top: 30px;
+      left: -350px;
+      max-width: 320px;
+      display: none;
+    }
+    &__text {
+      @include text;
+      margin: 0 auto 0 0;
+      padding: 0 40px 40px 100px;
+      font-weight: 300;
+      font-size: 16px;
+      text-align: left;
+      margin-bottom: 15px;
+      line-height: 1.3;
+      position: relative;
+    }
+    &__icon {
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      max-width: 70px;
+    }
+    &__img {
+      @include img;
     }
   }
 
@@ -562,8 +637,22 @@ body {
         font-size: 40px;
       }
     }
-    .es-benefits {
+    .es-results {
+      &__container{
+        flex-wrap: nowrap;
+      }
+    }
+    .es-aplicator {
       margin-bottom: 64px;
+      &__container{
+        flex-wrap: nowrap;
+      }
+      &__img {
+        padding-top: 100px;
+      }
+      &__single {
+        width: 50%;
+      }
     }
     .es-cross {
       &__title {
@@ -625,6 +714,11 @@ body {
       .swiper-button-next,
       .swiper-button-prev {
         width: 40px;
+      }
+    }
+    .es-aplicator {
+      &__line {
+        display: block;
       }
     }
   }
